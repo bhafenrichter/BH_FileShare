@@ -25,5 +25,7 @@ namespace BH_FileShare
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Download> Downloads { get; set; }
+        public virtual DbSet<Encryption> Encryptions { get; set; }
     }
 }

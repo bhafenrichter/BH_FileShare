@@ -1,7 +1,55 @@
-﻿
+﻿@model BH_FileShare.HomeViewModel
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 @{
     ViewBag.Title = "Index";
 }
+@using (Html.BeginForm())
+{ 
+    <div class="panel">
+        <div class="panel-body">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">First Name</label>
+                    @Html.TextBox("FirstName", "", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Last Name</label>
+                    @Html.TextBox("LastName", "", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    @Html.TextBox("Email", "", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Address</label>
+                    @Html.TextBox("Address", "", new { @class = "form-control" })
 
-<h2>Index</h2>
+                            @Html.TextBox("City", "", new { @class = "form-control", @style = "width:100px; display:inline;", @placeholder = "City" })
+
+                            @Html.TextBox("State", "", new { @class = "form-control", @placeholder = "State", @style = "width:75px; display:inline;" })
+
+                            @Html.TextBox("Zip", "", new { @class = "form-control", @style = "width:100px; display:inline;", @placeholder = "Zip" })
+                        
+                </div>
+                <button type="submit" class="btn btn-default"  name="type" value="image" style="width:50%">Download Image</button>
+                <button type="submit" class="btn btn-success" name="type" value="document" style="width:50%">Download Document</button>
+                <button type="submit" class="btn btn-warning" name="type" value="code" style="width:50%">Download Code</button>
+            </div>
+            
+        </div>
+    </div>
+    
+}
+
+<script type="text/javascript">
+    @if(ViewBag.Error != null)
+    {
+        <text>
+    alert("You must fill out all of the credentials to download any of the files.");
+        </text>
+    }
+</script>
 

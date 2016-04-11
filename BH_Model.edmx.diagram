@@ -4,7 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2d82b5e813364a2e9b00c9df5556ca54" Name="Diagram1" />
+      <Diagram DiagramId="2d82b5e813364a2e9b00c9df5556ca54" Name="Diagram1" >
+        <EntityTypeShape EntityType="BH_FileShareModel.Download" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="BH_FileShareModel.Encryption" Width="1.5" PointX="3" PointY="1.5" />
+        <AssociationConnector Association="BH_FileShareModel.FK_Encryption_Download" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

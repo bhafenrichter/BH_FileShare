@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BH_FileShareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BH_FileShareEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Downloads" EntityType="BH_FileShareModel.Download" />
+    <EntitySet Name="Encryptions" EntityType="BH_FileShareModel.Encryption" />
+    <AssociationSet Name="FK_Encryption_Download" Association="BH_FileShareModel.FK_Encryption_Download">
+      <End Role="Download" EntitySet="Downloads" />
+      <End Role="Encryption" EntitySet="Encryptions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Download">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Zip" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Encryptions" Relationship="BH_FileShareModel.FK_Encryption_Download" FromRole="Download" ToRole="Encryption" />
+  </EntityType>
+  <EntityType Name="Encryption">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Hash" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Download" Relationship="BH_FileShareModel.FK_Encryption_Download" FromRole="Encryption" ToRole="Download" />
+  </EntityType>
+  <Association Name="FK_Encryption_Download">
+    <End Type="BH_FileShareModel.Download" Role="Download" Multiplicity="1" />
+    <End Type="BH_FileShareModel.Encryption" Role="Encryption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Download">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Encryption">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

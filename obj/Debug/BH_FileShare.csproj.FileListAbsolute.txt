@@ -44,3 +44,7 @@ c:\users\brandon\documents\visual studio 2015\Projects\BH_FileShare\BH_FileShare
 c:\users\brandon\documents\visual studio 2015\Projects\BH_FileShare\BH_FileShare\obj\Debug\BH_FileShare.csprojResolveAssemblyReference.cache
 c:\users\brandon\documents\visual studio 2015\Projects\BH_FileShare\BH_FileShare\obj\Debug\BH_FileShare.dll
 c:\users\brandon\documents\visual studio 2015\Projects\BH_FileShare\BH_FileShare\obj\Debug\BH_FileShare.pdb
+C:\Users\Brandon\Documents\Visual Studio 2015\Projects\BH_FileShare\BH_FileShare\bin\EntityFramework.dll
+C:\Users\Brandon\Documents\Visual Studio 2015\Projects\BH_FileShare\BH_FileShare\bin\EntityFramework.SqlServer.dll
+C:\Users\Brandon\Documents\Visual Studio 2015\Projects\BH_FileShare\BH_FileShare\bin\EntityFramework.xml
+C:\Users\Brandon\Documents\Visual Studio 2015\Projects\BH_FileShare\BH_FileShare\bin\EntityFramework.SqlServer.xml
